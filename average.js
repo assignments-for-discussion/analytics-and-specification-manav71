@@ -1,6 +1,17 @@
 
 function average(numbers) {
-  return numbers.reduce((p, c)=> p + c, 0) / numbers.length;
+  
+  let invalidData = 0;
+  
+  return parseFloat(numbers.reduce((p, c)=> {
+    if (isNaN(c)){
+      invalidData++ ;
+      return p + 0;  
+    } else {
+      return p + c;
+    }
+  }, 0)) / (numbers.length - invalidData);
+  
 }
 
-module.exports = {average};
+module.exports = { average };
