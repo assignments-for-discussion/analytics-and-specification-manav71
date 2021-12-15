@@ -1,17 +1,12 @@
 
 function average(numbers) {
   
-  let invalidData = 0;
+const validData = numbers.filter(function (data) {
   
-  return parseFloat(numbers.reduce((p, c)=> {
-    if (isNaN(c)){
-      invalidData++ ;
-      return p + 0;  
-    } else {
-      return p + c;
-    }
-  }, 0)) / (numbers.length - invalidData);
+      return !Number.isNaN(data);
+  });
   
+ return validData.reduce((p, c) => p + c, 0) / validData.length;
 }
 
 module.exports = { average };
