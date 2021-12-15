@@ -18,7 +18,8 @@ var upperLimit = thirdQuartile + interquartileRange * 1.5;
 var lowerLimit = firstQuartile - interquartileRange * 1.5;
  
 //   removing outliers
-var validDataSet = dataSet.filter((a) => a <= upperLimit && a >= lowerLimit);
+var validDataSet = dataSet.filter((a) => 
+                           a <= upperLimit && a >= lowerLimit);
  
   return validDataSet;
 }
