@@ -18,3 +18,8 @@ it('ignores NaN in the input', ()=> {
 it('ignores outliers in the input', () => {
   expect(average([5, 8, 11, 20, 30, 40, 1500])).to.be.approximately(19, 0.01);
 });
+
+it('ignores outliers and NaN in the input', () => {
+  expect(average([5,NaN, 8, 11, 20, 2000])).to.be.approximately(11, 0.01);
+});
+
