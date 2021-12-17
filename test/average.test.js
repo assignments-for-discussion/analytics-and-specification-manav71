@@ -23,3 +23,6 @@ it('ignores outliers and NaN in the input', () => {
   expect(average([5,NaN, 8, 11, 20, 2000])).to.be.approximately(11, 0.01);
 });
 
+it('reports the average as NaN on an list of NaN', ()=> {
+  expect(average([NaN, NaN, NaN, NaN])).to.be.NaN;
+});
