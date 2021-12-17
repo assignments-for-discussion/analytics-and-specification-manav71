@@ -14,3 +14,15 @@ it('reports the average as NaN on an empty list', ()=> {
 it('ignores NaN in the input', ()=> {
   expect(average([1, NaN, 2])).to.be.approximately(1.5, 0.01);
 });
+
+it('ignores outliers in the input', () => {
+  expect(average([5, 8, 11, 20, 30, 40, 1500])).to.be.approximately(19, 0.01);
+});
+
+it('ignores outliers and NaN in the input', () => {
+  expect(average([5,NaN, 8, 11, 20, 2000])).to.be.approximately(11, 0.01);
+});
+
+it('reports the average as NaN on an list of NaN', ()=> {
+  expect(average([NaN, NaN, NaN, NaN])).to.be.NaN;
+});
